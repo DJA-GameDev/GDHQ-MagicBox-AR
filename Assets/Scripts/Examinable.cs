@@ -26,4 +26,9 @@ public class Examinable : MonoBehaviour
         print("Examine has been requested");
     }
 
+    public void RequestUnexamine()
+    {
+        _examinableManager.PerformUnexamine();
+        print("Unexamine has been requested");
+    }
 }
