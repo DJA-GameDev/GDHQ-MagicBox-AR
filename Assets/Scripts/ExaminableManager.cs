@@ -11,6 +11,8 @@ public class ExaminableManager : MonoBehaviour
     private Quaternion _cachedRotation;
     private Examinable _currentExaminedObject;
 
+    private bool _isExamining = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,17 @@ public class ExaminableManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_isExamining == true)
+        { 
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Moved) 
+                {
+                    print(touch.position);
+                }
+            }
+        }
     }
 
     public void PerformExamine(Examinable examinable)
@@ -32,6 +44,8 @@ public class ExaminableManager : MonoBehaviour
 
         _currentExaminedObject.transform.position = _examineTarget.position;
         _currentExaminedObject.transform.parent = _examineTarget;
+
+        _isExamining = true;
     }
 
     public void PerformUnexamine()
@@ -39,5 +53,8 @@ public class ExaminableManager : MonoBehaviour
         _currentExaminedObject.transform.position = _cachedPosition;
         _currentExaminedObject.transform.rotation= _cachedRotation;
         _currentExaminedObject.transform.parent = null;
+        _currentExaminedObject = null;
+
+        _isExamining = false;
     }
 }
