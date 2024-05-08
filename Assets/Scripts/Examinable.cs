@@ -7,6 +7,9 @@ public class Examinable : MonoBehaviour
     [SerializeField]
     private ExaminableManager _examinableManager;
 
+    [SerializeField]
+    public float _examineScaleOffset = 1;
+
     // Start is called before the first frame update
     void Start()
     {

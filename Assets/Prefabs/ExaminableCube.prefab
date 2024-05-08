@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _examinableManager: {fileID: 0}
+  _examineScaleOffset: 0.3
 --- !u!114 &-1021948419514615462
 MonoBehaviour:
   m_ObjectHideFlags: 0
