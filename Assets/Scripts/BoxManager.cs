@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR.Management;
 using UnityEngine;
 
 public class BoxManager : MonoBehaviour
 {
-    private string _correctGemOrder = "BlueGreenRed";
+    private string _correctGemOrder = "BlueRedGreen";
     private string _enteredGemOrder = "";
 
     private int _amountOfGems = 3;
@@ -19,7 +18,7 @@ public class BoxManager : MonoBehaviour
 
         _currentGem += 1;
 
-        if (_currentGem == 3)
+        if (_currentGem == _amountOfGems)
         {
             CompareGemOrder();
         }
@@ -27,8 +26,30 @@ public class BoxManager : MonoBehaviour
         print("Gem selected");
     }
 
-    public void CompareGemOrder()
+    void CompareGemOrder()
     {
+        if (_correctGemOrder == _enteredGemOrder)
+        {
+            print("Order is correct");
+            OpenBox();
+        }
+        else
+        {
+            print("Order is incorrect");
+            ResetGame();
+        }
+    }
 
+    void OpenBox()
+    {
+        _boxAnimator.SetTrigger("Open");
+    }
+
+    void ResetGame()
+    {
+        _currentGem = 0;
+        _enteredGemOrder = "";
+
+        //Reset the gem emission
     }
 }
