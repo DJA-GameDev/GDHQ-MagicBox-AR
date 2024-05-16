@@ -12,6 +12,9 @@ public class BoxManager : MonoBehaviour
 
     public Animator _boxAnimator;
 
+    [SerializeField] 
+    private Gem[] _gemsInScene;
+
     public void GemSelect(Gem currentSelectedGem)
     {
         _enteredGemOrder += currentSelectedGem._gemColor;
@@ -23,7 +26,7 @@ public class BoxManager : MonoBehaviour
             CompareGemOrder();
         }
 
-        print("Gem selected");
+        currentSelectedGem.ChangeEmission(true);
     }
 
     void CompareGemOrder()
@@ -51,5 +54,9 @@ public class BoxManager : MonoBehaviour
         _enteredGemOrder = "";
 
         //Reset the gem emission
+        foreach (var gem in _gemsInScene)
+        {
+            gem.ChangeEmission(false);
+        }
     }
 }

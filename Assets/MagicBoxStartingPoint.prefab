@@ -270,6 +270,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boxAnimator: {fileID: 7370067103230344326}
+  _gemsInScene:
+  - {fileID: 228028470159981166}
+  - {fileID: 4025570847617642175}
+  - {fileID: 6153684810712603571}
 --- !u!1 &1431594611470019118
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gemColor: Blue
+  _targetMaterial: {fileID: 2100000, guid: c46016725e1974216b306bd27f5b0ca7, type: 2}
 --- !u!1 &3903725373992657236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gemColor: Green
+  _targetMaterial: {fileID: 2100000, guid: d4bceadd7bd18457aba32ab13dac25f8, type: 2}
 --- !u!1 &7559108515336647058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,3 +1980,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gemColor: Red
+  _targetMaterial: {fileID: 2100000, guid: 1a59b77561c6f4c43bce3363794bb4e8, type: 2}
