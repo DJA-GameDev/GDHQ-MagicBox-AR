@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoxManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class BoxManager : MonoBehaviour
 
     [SerializeField] 
     private Gem[] _gemsInScene;
+
+    [SerializeField]
+    private UnityEvent _gameIsWon;
 
     public void GemSelect(Gem currentSelectedGem)
     {
@@ -34,7 +38,7 @@ public class BoxManager : MonoBehaviour
         if (_correctGemOrder == _enteredGemOrder)
         {
             print("Order is correct");
-            OpenBox();
+            CompleteGame();
         }
         else
         {
@@ -43,9 +47,9 @@ public class BoxManager : MonoBehaviour
         }
     }
 
-    void OpenBox()
+    void CompleteGame()
     {
-        _boxAnimator.SetTrigger("Open");
+        _gameIsWon.Invoke();
     }
 
     void ResetGame()
