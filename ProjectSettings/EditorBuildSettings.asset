@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ScenePicker.unity
+    guid: f9d75fe36218e044bbd0fcbe8ea3639f
+  - enabled: 1
+    path: Assets/Scenes/1-ARObjectPlacer.unity
+    guid: ae4c460ab884fd5468d6b026699a8e28
+  - enabled: 1
+    path: Assets/Scenes/2-ObjectExaminer.unity
+    guid: 36f32843605baef49844c4217b48ced3
+  - enabled: 1
     path: Assets/Scenes/3-MagicBox.unity
     guid: 1e01c30b4e932514696e6c32a7b1df0a
   m_configObjects:
